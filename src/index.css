@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@layer utilities {
+  /* Container */
+  .container {
+    @apply min-w-full py-2 px-5 md:px-[4rem] lg:px-[6.5rem]
+  }
+  .container-fluid {
+    @apply min-w-full py-2 px-5
+  }
+  
+  body {
+    @apply bg-slate-50
+  }
+  
+  .login-form {
+    @apply w-full h-screen flex flex-col justify-center items-center;
+    .form-title {
+      @apply text-4xl text-center my-6 font-bold;
+    }
+    .formInput {
+      @apply flex flex-col gap-3 w-[70%] py-4 px-3 bg-slate-500 max-w-[480px] rounded-lg shadow-md;
+      .label-input {
+        @apply font-bold text-slate-50 mt-2 text-[.9rem]
+      }
+      .field-input {
+        @apply text-[1rem] text-slate-700 py-2 px-3 font-semibold rounded-md
+      }
+      .submit-btn {
+        @apply text-[1.15rem] mt-3 text-slate-50 font-black bg-slate-800 py-3 rounded-md
+        hover:bg-slate-900 hover:text-slate-200 active:scale-[.94] transition;
+      }
+      /** Alt Login **/
+      .alt-login {
+        @apply  flex flex-col gap-2;
+        .alt-login-title {
+          @apply text-center text-[.9rem] text-slate-200 font-semibold;
+        }
+        .auth-box {
+          @apply grid grid-cols-1 gap-3;
+         .auth-btn {
+            @apply bg-slate-400 text-slate-50 text-[1.5rem] block rounded-lg py-1;
+          }
+        }
+      }
+      .change-mode {
+        @apply text-[.9rem] text-center text-slate-200 underline font-semibold
+      }
+    }
+  }
+  
+  
+  /** Posts Container **/
+  .home .container .posts {
+    .filter-btn {
+      @apply py-2 px-3 bg-slate-500 rounded-lg outline-none border-none shadow-md mb-4 text-slate-100 font-bold text-[.9rem]
+      active:scale-[.9] transition
+    }
+  }
+  
+  /** Post Form **/
+  .postform {
+    @apply bg-slate-200 py-4 shadow mb-6;
+    .postform-title {
+      @apply text-2xl font-bold text-slate-600 my-3;
+    }
+    .postform-title._notLogin {
+      @apply underline text-stone-800;
+    }
+    /** Form **/
+    .form {
+      @apply flex  items-center gap-5;
+      .name {
+        @apply font-semibold text-slate-800
+      }
+      .input {
+        @apply flex-1 py-1 px-3 rounded-md
+      }
+      .post-btn {
+        @apply py-1 px-3 bg-slate-700 text-slate-100 font-semibold rounded-md active:scale-[.95] transition
+      }
+    }
+  }
+  /** Post **/
+  .post-wrap {
+    @apply flex flex-col gap-7;
+    .post {
+      @apply shadow border border-slate-300 rounded-lg overflow-clip flex flex-col gap-3;
+      .post-head {
+        @apply bg-slate-600 py-3 px-4 flex justify-between items-center text-slate-100;
+        .from {
+          @apply font-semibold text-[.9rem]
+        }
+        .time {
+          @apply text-[.75rem]
+        }
+      }
+      .post-body {
+        @apply px-4;
+        > .post-text {
+          @apply text-[.96rem] font-semibold text-slate-800 w-full min-h-[110px]
+          outline-none border-none py-2 px-1
+        }
+      }
+      .post-foot {
+        @apply flex px-4 gap-4 py-3;
+        > li {
+          @apply flex-1 text-center font-bold text-slate-600 bg-slate-300 rounded-lg py-1 active:scale-[.95] transition;
+          > span {
+            @apply pointer-events-none;
+          }
+        }
+      }
+    }
+  }
+}
